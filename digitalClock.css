@@ -1,208 +1,206 @@
-/* @font-face {
-    font-family: 'Digital-7';
-    src: url('https://fonts.cdnfonts.com/s/17894/Digital7-rg1mL.woff') format('woff');
-} */
-
 body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #000;
-    font-family: "Noto Serif", serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 17%, rgba(51, 50, 50, 1) 54%, rgba(90, 92, 92, 1) 100%);
+  font-family: "Noto Serif", serif;
 }
-
 
 #toggleFormat, #toggleTheme {
-    position: fixed;
-    top: 1rem;
-    padding: 0.5rem 1rem;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 8px;
-    color: #fff;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    z-index: 1000;
+  position: fixed;
+  top: 1rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  z-index: 1000;
 }
 #toggleFormat {
-    right: 1rem;
+  right: 1rem;
 }
 #toggleTheme {
-    left: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  left: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 #toggleFormat:hover, #toggleTheme:hover {
-    background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.2);
 }
 
 /* Digital clock box */
 .digital-clock {
-    background: #000;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    border-radius: 2rem;
-    border: 0.5rem solid #2d2d2d;
-    padding: 1rem 2rem;
-    box-sizing: border-box;
+  /* background: #000;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 17%, rgba(51, 50, 50, 1) 54%, rgba(90, 92, 92, 1) 100%); */
+  color: #fff;
+  display: flex;
+  align-items: center;
+  border-radius: 2rem;
+  border: 0.5rem solid #6c6c6c;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
 }
 
 .week {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 3rem;
-    color: #2d2d2d;
-    font-weight: bold;
-    font-family: "Noto Serif", serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  color: #626161;
+  font-weight: bold;
+  font-family: "Noto Serif", serif;
 }
 .week .active {
-    color: white;
+  color: white;
 }
 
 .time-container {
-    margin-left: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
 
 .time {
-    font-family: "Noto Serif", serif;
-    display: flex;
-    align-items: flex-end; 
-    white-space: nowrap; 
+  font-family: "Noto Serif", serif;
+  display: flex;
+  align-items: flex-end; 
+  white-space: nowrap; 
 }
 
 .hour, .min, .sec, .dot {
-    font-size: 15vw;
-    line-height: 1;
+  font-size: 15vw;
+  line-height: 1;
 }
 
 .ampm {
-    font-size: 2vw;       
-    margin-left: 0.3rem; 
-    margin-bottom: 0.8vw;
-    font-family: "Noto Serif", serif;
-    color: #fff;
+  font-size: 2vw;       
+  margin-left: 0.3rem; 
+  margin-bottom: 0.8vw;
+  font-family: "Noto Serif", serif;
+  color: #fff;
 }
 
 .date {
-    font-size: 2vw;
-    margin-top: 0.5rem;
-    color: #fff;
-    font-family: "Noto Serif", serif;
-    align-self: center;
+  font-size: 2vw;
+  margin-top: 0.5rem;
+  color: #fff;
+  font-family: "Noto Serif", serif;
+  align-self: center;
 }
 
 .invisible {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 .signature {
-    position: fixed;
-    bottom: 1rem;
-    font-family: 'Great Vibes', cursive;
-    font-size: 2.5vw;
-    color: #fff;
-    opacity: 0.9;
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.6),
-                0 0 10px rgba(255, 255, 255, 0.4);
+  position: fixed;
+  bottom: 1rem;
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5vw;
+  color: #fff;
+  opacity: 0.9;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.6),
+              0 0 10px rgba(255, 255, 255, 0.4);
 }
 .signature.left {
-    left: 2rem;
+  left: 2rem;
 }
 .signature.right {
-    right: 2rem;
+  right: 2rem;
 }
 
 /* Light mode */
 body.light {
-    background: #fff;
-    color: #000;
+  background: #ebebeb;
+  background: linear-gradient(170deg, rgba(235, 235, 235, 1) 17%, rgba(201, 201, 201, 1) 54%, rgba(158, 175, 176, 1) 100%);
+  color: #000;
 }
 body.light .digital-clock {
-    background: #fff;
-    color: #000;
-    border-color: #ccc;
+  background: #ebebeb;
+  background: linear-gradient(170deg, rgba(235, 235, 235, 1) 17%, rgba(201, 201, 201, 1) 54%, rgba(158, 175, 176, 1) 100%);
+  color: #000;
+  border-color: #999999;
 }
 body.light .week {
-    color: #aaa;
+  color: #aaa;
 }
 body.light .week .active {
-    color: #000;
+  color: #000;
 }
 body.light .ampm, 
 body.light .date, 
 body.light .signature {
-    color: #000;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.2),
-                0 0 10px rgba(0, 0, 0, 0.1);
+  color: #000;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.2),
+              0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 
 body.light #toggleFormat,
 body.light #toggleTheme {
-    background: rgba(0, 0, 0, 0.05);
-    color: #000;
-    border: 1px solid rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.05);
+  color: #000;
+  border: 1px solid rgba(0, 0, 0, 0.3);
 }
 body.light #toggleFormat:hover, 
 body.light #toggleTheme:hover {
-    background: rgba(0, 0, 0, 0.15);
-    color: #000;
+  background: rgba(0, 0, 0, 0.15);
+  color: #000;
 }
 
 
 @media (max-width: 768px) {
-    .hour, .min, .sec, .dot {
-        font-size: 16vw;
-    }
-    .ampm {
-        font-size: 5vw;
-    }
-    .week {
-        font-size: 3vw;
-    }
-    .digital-clock {
-        padding: 0.5rem 1rem;
-    }
-    .date {
-        font-size: 3.5vw;
-    }
-    .signature {
-        font-size: 4vw;
-    }
+  .hour, .min, .sec, .dot {
+    font-size: 16vw;
+  }
+  .ampm {
+    font-size: 5vw;
+  }
+  .week {
+    font-size: 3vw;
+  }
+  .digital-clock {
+    padding: 0.5rem 1rem;
+  }
+  .date {
+    font-size: 3.5vw;
+  }
+  .signature {
+    font-size: 4vw;
+  }
 }
 
 @media (max-width: 480px) {
-    .hour, .min, .sec, .dot {
-        font-size: 12vw;
-    }
-    .ampm {
-        font-size: 4vw;
-    }
-    .week {
-        font-size: 2.5vw;
-    }
-    .digital-clock {
-        padding: 0.5rem 1rem;
-    }
-    .date {
-        font-size: 4vw;
-    }
-    .signature {
-        font-size: 5vw;
-    }
+  .hour, .min, .sec, .dot {
+    font-size: 12vw;
+  }
+  .ampm {
+    font-size: 4vw;
+  }
+  .week {
+    font-size: 2.5vw;
+  }
+  .digital-clock {
+    padding: 0.5rem 1rem;
+  }
+  .date {
+    font-size: 4vw;
+  }
+  .signature {
+    font-size: 5vw;
+  }
 }
 
 
