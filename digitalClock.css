@@ -1,0 +1,489 @@
+/* @font-face {
+    font-family: 'Digital-7';
+    src: url('https://fonts.cdnfonts.com/s/17894/Digital7-rg1mL.woff') format('woff');
+} */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    font-family: "Noto Serif", serif;
+}
+
+
+#toggleFormat, #toggleTheme {
+    position: fixed;
+    top: 1rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+#toggleFormat {
+    right: 1rem;
+}
+#toggleTheme {
+    left: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#toggleFormat:hover, #toggleTheme:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Digital clock box */
+.digital-clock {
+    background: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    border-radius: 2rem;
+    border: 0.5rem solid #2d2d2d;
+    padding: 1rem 2rem;
+    box-sizing: border-box;
+}
+
+.week {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    color: #2d2d2d;
+    font-weight: bold;
+    font-family: "Noto Serif", serif;
+}
+.week .active {
+    color: white;
+}
+
+.time-container {
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.time {
+    font-family: "Noto Serif", serif;
+    display: flex;
+    align-items: flex-end; 
+    white-space: nowrap; 
+}
+
+.hour, .min, .sec, .dot {
+    font-size: 15vw;
+    line-height: 1;
+}
+
+.ampm {
+    font-size: 2vw;       
+    margin-left: 0.3rem; 
+    margin-bottom: 0.8vw;
+    font-family: "Noto Serif", serif;
+    color: #fff;
+}
+
+.date {
+    font-size: 2vw;
+    margin-top: 0.5rem;
+    color: #fff;
+    font-family: "Noto Serif", serif;
+    align-self: center;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.signature {
+    position: fixed;
+    bottom: 1rem;
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5vw;
+    color: #fff;
+    opacity: 0.9;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.6),
+                0 0 10px rgba(255, 255, 255, 0.4);
+}
+.signature.left {
+    left: 2rem;
+}
+.signature.right {
+    right: 2rem;
+}
+
+/* Light mode */
+body.light {
+    background: #fff;
+    color: #000;
+}
+body.light .digital-clock {
+    background: #fff;
+    color: #000;
+    border-color: #ccc;
+}
+body.light .week {
+    color: #aaa;
+}
+body.light .week .active {
+    color: #000;
+}
+body.light .ampm, 
+body.light .date, 
+body.light .signature {
+    color: #000;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.2),
+                0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+body.light #toggleFormat,
+body.light #toggleTheme {
+    background: rgba(0, 0, 0, 0.05);
+    color: #000;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+body.light #toggleFormat:hover, 
+body.light #toggleTheme:hover {
+    background: rgba(0, 0, 0, 0.15);
+    color: #000;
+}
+
+
+@media (max-width: 768px) {
+    .hour, .min, .sec, .dot {
+        font-size: 16vw;
+    }
+    .ampm {
+        font-size: 5vw;
+    }
+    .week {
+        font-size: 3vw;
+    }
+    .digital-clock {
+        padding: 0.5rem 1rem;
+    }
+    .date {
+        font-size: 3.5vw;
+    }
+    .signature {
+        font-size: 4vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .hour, .min, .sec, .dot {
+        font-size: 12vw;
+    }
+    .ampm {
+        font-size: 4vw;
+    }
+    .week {
+        font-size: 2.5vw;
+    }
+    .digital-clock {
+        padding: 0.5rem 1rem;
+    }
+    .date {
+        font-size: 4vw;
+    }
+    .signature {
+        font-size: 5vw;
+    }
+}
+
+
+
+/* 
+html {
+  font-size: 0.75vmin;
+}
+
+body {
+  background-image: linear-gradient(to bottom, #131313, #000);
+  perspective: 45rem;
+  transform-style: preserve-3d;
+}
+
+.wrapper {
+  -webkit-animation: camera-rotate 40s ease-in-out forwards infinite;
+          animation: camera-rotate 40s ease-in-out forwards infinite;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+main {
+  --s: 100%;
+  --l: 50%;
+  display: flex;
+  color: hsl(210deg, var(--s), var(--l));
+  gap: 1rem;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  animation-composition: add;
+  /* for hue rotate(laggy thou) 
+  -webkit-animation: camera-pan 30s linear forwards infinite;
+          animation: camera-pan 30s linear forwards infinite;
+  translate: 0rem 1rem 10rem;
+  transform-style: preserve-3d;
+}
+main .digits {
+  transform-style: preserve-3d;
+}
+main .digits .group {
+  display: flex;
+  gap: 2rem;
+}
+main .digits .group .digit {
+  position: relative;
+  height: 16rem;
+  aspect-ratio: 1/2;
+  filter: drop-shadow(0px 0px 4px currentColor) drop-shadow(0px 0px 10px currentColor);
+}
+main .digits .group .digit span {
+  --act: 0;
+  --signX: 1;
+  --signY: 1;
+  position: absolute;
+  background-color: white;
+  transition: all 0.3s cubic-bezier(0.17, 0.67, 0.5, 1.15);
+  opacity: calc(0.03 + 0.97 * var(--act));
+  animation-composition: add;
+  transform: scale(var(--signX), var(--signY));
+}
+main .digits .group .digit span.end {
+  -webkit-clip-path: polygon(15% 0%, 7.5% 20%, 25% 100%, 75% 100%, 92.5% 20%, 85% 0%);
+          clip-path: polygon(15% 0%, 7.5% 20%, 25% 100%, 75% 100%, 92.5% 20%, 85% 0%);
+  width: 100%;
+  height: 10%;
+}
+main .digits .group .digit span.end.top {
+  top: 0;
+}
+main .digits .group .digit span.end.bottom {
+  top: initial;
+  bottom: 0;
+  --signY: -1;
+}
+main .digits .group .digit span.side {
+  -webkit-clip-path: polygon(0% 15%, 20% 7.5%, 100% 22.5%, 100% 85%, 20% 95%, 0% 90%);
+          clip-path: polygon(0% 15%, 20% 7.5%, 100% 22.5%, 100% 85%, 20% 95%, 0% 90%);
+  height: 50%;
+  width: 20%;
+}
+main .digits .group .digit span.side.left {
+  top: 0;
+  left: 0;
+}
+main .digits .group .digit span.side.left.bottom {
+  top: initial;
+  bottom: 0;
+  --signY: -1;
+}
+main .digits .group .digit span.side.right {
+  top: 0;
+  left: initial;
+  right: 0;
+  --signX: -1;
+}
+main .digits .group .digit span.side.right.bottom {
+  top: initial;
+  --signY: -1;
+  bottom: 0;
+}
+main .digits .group .digit span.middle {
+  -webkit-clip-path: polygon(22.5% 0%, 6.5% 50%, 22.5% 100%, 77.5% 100%, 93.5% 50%, 77.5% 0%);
+          clip-path: polygon(22.5% 0%, 6.5% 50%, 22.5% 100%, 77.5% 100%, 93.5% 50%, 77.5% 0%);
+  top: 45%;
+  height: 10%;
+  width: 100%;
+}
+main .digits .group .digit[data-digit="0"] :not(.middle) {
+  --act: 1;
+}
+main .digits .group .digit[data-digit="1"] .right {
+  --act: 1;
+}
+main .digits .group .digit[data-digit="2"] :not(.top.left, .bottom.right) {
+  --act: 1;
+}
+main .digits .group .digit[data-digit="3"] :not(.left) {
+  --act: 1;
+}
+main .digits .group .digit[data-digit="4"] :not(.end, .bottom.left) {
+  --act: 1;
+}
+main .digits .group .digit[data-digit="5"] :not(.top.right, .bottom.left) {
+  --act: 1;
+}
+main .digits .group .digit[data-digit="6"] :not(.top.right) {
+  --act: 1;
+}
+main .digits .group .digit[data-digit="7"] .top, main .digits .group .digit[data-digit="7"] .right {
+  --act: 1;
+}
+main .digits .group .digit[data-digit="8"] > * {
+  --act: 1;
+}
+main .digits .group .digit[data-digit="9"] :not(.bottom.left) {
+  --act: 1;
+}
+main .colon-group {
+  transform-style: preserve-3d;
+}
+main .colon-group .colon span {
+  display: flex;
+  height: 16rem;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 4rem;
+  align-items: center;
+  filter: drop-shadow(0px 0px 4px currentColor) drop-shadow(0px 0px 10px currentColor);
+}
+main .colon-group .colon span::before, main .colon-group .colon span::after {
+  content: "";
+  display: block;
+  width: 2rem;
+  aspect-ratio: 1/1;
+  background-color: white;
+  border-radius: 2rem;
+}
+main .shadow {
+  top: 0;
+  position: absolute;
+  transform-origin: bottom center;
+  transform: translateY(1rem) translateZ(2rem) rotateX(-90.1deg);
+}
+main .shadow .digit span {
+  opacity: var(--act);
+}
+main .shadow.shadow1 {
+  opacity: 0.5;
+  filter: drop-shadow(0px 0px 4px currentColor) drop-shadow(0px 0px 10px currentColor) blur(4rem);
+}
+main .shadow.shadow1 > span, main .shadow.shadow1 .digit {
+  -webkit-mask-image: linear-gradient(to bottom, white, rgba(0, 0, 0, 0.5));
+          mask-image: linear-gradient(to bottom, white, rgba(0, 0, 0, 0.5));
+}
+main .shadow.shadow2 {
+  opacity: 0.4;
+  filter: drop-shadow(0px 0px 4px currentColor) drop-shadow(0px 0px 10px currentColor) blur(4px);
+}
+main .shadow.shadow2 > span, main .shadow.shadow2 .digit {
+  opacity: var(--act);
+  -webkit-mask-image: linear-gradient(to top, black, rgba(0, 0, 0, 0.1) 60%, rgba(0, 0, 0, 0));
+          mask-image: linear-gradient(to top, black, rgba(0, 0, 0, 0.1) 60%, rgba(0, 0, 0, 0));
+}
+
+@-webkit-keyframes hue-rotate {
+  0% {
+    color: hsl(0deg, var(--s), var(--l));
+  }
+  8.33% {
+    color: hsl(30deg, var(--s), var(--l));
+  }
+  16.67% {
+    color: hsl(60deg, var(--s), var(--l));
+  }
+  25% {
+    color: hsl(90deg, var(--s), var(--l));
+  }
+  33.33% {
+    color: hsl(120deg, var(--s), var(--l));
+  }
+  41.67% {
+    color: hsl(150deg, var(--s), var(--l));
+  }
+  50% {
+    color: hsl(180deg, var(--s), var(--l));
+  }
+  58.33% {
+    color: hsl(210deg, var(--s), var(--l));
+  }
+  66.67% {
+    color: hsl(240deg, var(--s), var(--l));
+  }
+  75% {
+    color: hsl(270deg, var(--s), var(--l));
+  }
+  83.33% {
+    color: hsl(300deg, var(--s), var(--l));
+  }
+  91.67% {
+    color: hsl(330deg, var(--s), var(--l));
+  }
+  100% {
+    color: hsl(360deg, var(--s), var(--l));
+  }
+}
+@keyframes hue-rotate {
+  0% {
+    color: hsl(0deg, var(--s), var(--l));
+  }
+  8.33% {
+    color: hsl(30deg, var(--s), var(--l));
+  }
+  16.67% {
+    color: hsl(60deg, var(--s), var(--l));
+  }
+  25% {
+    color: hsl(90deg, var(--s), var(--l));
+  }
+  33.33% {
+    color: hsl(120deg, var(--s), var(--l));
+  }
+  41.67% {
+    color: hsl(150deg, var(--s), var(--l));
+  }
+  50% {
+    color: hsl(180deg, var(--s), var(--l));
+  }
+  58.33% {
+    color: hsl(210deg, var(--s), var(--l));
+  }
+  66.67% {
+    color: hsl(240deg, var(--s), var(--l));
+  }
+  75% {
+    color: hsl(270deg, var(--s), var(--l));
+  }
+  83.33% {
+    color: hsl(300deg, var(--s), var(--l));
+  }
+  91.67% {
+    color: hsl(330deg, var(--s), var(--l));
+  }
+  100% {
+    color: hsl(360deg, var(--s), var(--l));
+  }
+}
+.safari .digit span {
+  transition: none !important;
+}
+.safari .digit span::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 400%;
+  height: 400%;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+} */

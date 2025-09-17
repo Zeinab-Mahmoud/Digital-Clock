@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+
+    <link rel="stylesheet" href="digitalClock.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:wght@100;300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="img/0fe79f545a77fe02b3c6e15bafae937d.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="img/0fe79f545a77fe02b3c6e15bafae937d.jpg" type="image/x-icon">
+</head>
+<body>
+    <!-- Toggle Buttons -->
+    <button id="toggleTheme"><i class='bx bx-moon'></i></button>
+    <button id="toggleFormat">24 Hour</button>
+
+    <div class="digital-clock">
+        <div class="week">
+            <div>SUN</div>
+            <div>MON</div>
+            <div>TUE</div>
+            <div>WED</div>
+            <div>THU</div>
+            <div>FRI</div>
+            <div>SAT</div>
+        </div>
+
+        <div class="time-container">
+            <div class="time">
+                <div class="hour">12</div>
+                <div class="dot">:</div>
+                <div class="min">05</div>
+                <div class="dot">:</div>
+                <div class="sec">30</div>
+                <div class="ampm">AM</div>
+            </div>
+            <div class="date"></div>
+        </div>
+    </div>
+
+    <div class="signature left">Whale 52 Hz</div>
+    <div class="signature right">Eng Zeinab Mahmoud</div>
+
+    <script src="digitalClock.js"></script>
+</body>
+</html>
+
+
+
+
+<!-- 
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Neon Clock (CSS) | Dhwarkesh Parekh</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<link href="digitalClock.css" rel="stylesheet">
+
+<style>
+*, *::before, *::after {
+  font-family: inherit;
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 62.5%;
+}
+
+html body {
+  font-size: 1.6rem;
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+ul {
+  list-style: none;
+}
+
+a, a:link, a:visited {
+  text-decoration: none;
+}
+</style><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html 
+<div class="wrapper">
+    <main></main>        
+</div>
+<!-- partial 
+  <script  src="digitalClock.js"></script>
+
+</body>
+</html>
+-->
